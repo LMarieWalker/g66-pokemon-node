@@ -6,6 +6,8 @@ module.exports = function(app){
 
   app.get('/', pokemon.getAll);
 
+  app.get('/pokemon', pokemon.getAll);
+
   app.use(function(req, res){
     res.send('not found');
   });
