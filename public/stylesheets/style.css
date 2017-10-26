@@ -18,6 +18,10 @@ body {
   margin: 0;
 }
 
+h1 {
+  color: white;
+}
+
 /* Disable ugly boxes around images in IE10 */
 a img{
   border: 0px;
