@@ -2,8 +2,15 @@ exports.seed = function(knex, Promise) {
   return Promise.join(
     knex('pokemon').del(),
 
-    knex('pokemon').insert({id: 500, name: "Bulbasaur",
-      cp: 15, in_gym: false, trainer_id: 1 }),
+    knex('pokemon').insert(
+      {
+        id: 500,
+        name: "Bulbasaur",
+        cp: 15,
+        in_gym: false,
+        trainer_id: 1
+      }
+    ),
     knex('pokemon').insert({id: 501, name: "Ivysaur",
       cp: 60, in_gym: false, trainer_id: 1}),
     knex('pokemon').insert({id: 502, name: "Venasaur",
