@@ -8,6 +8,10 @@ module.exports = function(app){
 
   app.get('/pokemon', pokemon.getAll);
 
+  // app.post('/pokemon', pokemon.create);
+
+  app.post('/pokemon', pokemon.newPokemon);
+
   app.use(function(req, res){
     res.send('not found');
   });
