@@ -2,14 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Introducing Lollipop, a sweet new take on Android.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0"> -->
     <title>Pokemon</title>
     <link rel="stylesheet" href="stylesheets/style.css">
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.min.css"> -->
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
@@ -85,10 +79,12 @@
             <table>
               <thead>
                 <tr>
-                    <th>Pokemon Name</th>
-                    <th>Trainers Name</th>
+                    <th>Pokemon</th>
+                    <th>Trainer</th>
                     <th>Combat Power</th>
                     <th>In The Gym?</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
               </thead>
               <tbody>
@@ -98,6 +94,8 @@
                   <td> <%= trainersInfo.name %> </td>
                   <td> <%= pokemonInfo[x].cp %> </td>
                   <td> <%= pokemonInfo[x].in_gym %> </td>
+                  <td> <a href="/edit/<%= pokemonInfo[x].id %>">Edit</a></td>
+                  <td> <a href="/delete/<%= pokemonInfo[x].id %>">Delete</a></td>
                 </tr>
                 <% } %>
               </tbody>
@@ -118,3 +116,8 @@
 
   </body>
 </html>
+
+
+
+
+ <!-- last update: sat28oct2017@0830 -->

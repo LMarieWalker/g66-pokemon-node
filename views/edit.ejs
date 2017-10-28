@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Pokemon</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <script type="text/javascript" src="js/script.js"></script>
+  </head>
+  <body>
+
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo"><img class="pokemon-logo-image" src="images/pokemon-logo.png"></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/trainers">Trainers</a></li>
+          <li><a href="/pokemon">Pokemón</a></li>
+          <li><a href="#">Gym</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <div class="pokemon-main mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <div class="pokemon-content mdl-layout__content">
+
+        <div class="app-content pokemon-wear-section">
+
+          <h1>CONTENT GOES HERE - 'pokemon.ejs'</h1>
+
+          <!-- // EDIT THE SPECIFIC POKEMON -->
+          <div class="pokemonListTable">
+            <h1>Editing <%= pokemon.name %></h1>
+
+            <form action="/update/<%= pokemon.id %>" method="post">
+              <input type="text" name="name" value="<%= pokemon.name %>">
+              <select name='trainers'>
+                <option disabled selected>CHOOSE THE TRAINER</option>
+                <% for (let i = 0; i < trainerInfo.length; i++){ %>
+                <option value="<%= trainerInfo[i].id %>"><%= trainerInfo[i].name %></option>
+                <!-- <option><%= trainerInfo[i].id %></option> -->
+                <% } %>
+              </select>
+              <input type="number" name="cp" value="<%= pokemon.cp %>">
+              <input type="checkbox" name="in_gym" value="<%= pokemon.in_gym %>">
+              <input type="submit" value="Update">
+            </form>
+          </div>
+
+
+        </div>
+
+        <!-- // FOOTER -->
+        <footer class="pokemon-footer mdl-mega-footer">
+          Your slogan.
+        </footer>
+
+      </div>
+    </div>
+    <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+  </body>
+</html>
+
+
+ <!-- last update: sat28oct2017@0830 -->

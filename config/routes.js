@@ -8,11 +8,17 @@ module.exports = function(app){
 
   app.get('/pokemon', pokemon.getAll);
 
-  // app.post('/pokemon', pokemon.create);
+  app.post('/pokemon', pokemon.create);
 
-  app.post('/pokemon', pokemon.newPokemon);
+  app.get('/edit/:id', pokemon.edit);
+
+  app.get('/delete/:id', pokemon.delete);
+
+  app.get('/update/:id', pokemon.update);
 
   app.use(function(req, res){
     res.send('not found');
   });
 }
+
+// last update: sat28oct2017@0830
