@@ -1,7 +1,7 @@
 ![](https://github.com/gSchool/pokemon-node/blob/master/public/images/pokemon-logo.png)
 
 
-# My Heroku URL: ![Pokemon Node](https://git.heroku.com/calm-basin-41081.git)
+# My Heroku URL: ![Pokemon Node](https://calm-basin-41081.herokuapp.com/)
 
 
 ### Important note before starting:
