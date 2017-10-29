@@ -17,13 +17,14 @@
   </head>
   <body>
 
-    <nav>
+    <nav class="deep-orange darken-4">
       <div class="nav-wrapper">
         <a href="#" class="brand-logo"><img class="pokemon-logo-image" src="images/pokemon-logo.png"></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <ul class="right hide-on-med-and-down">
           <li><a href="/trainers">Trainers</a></li>
           <li><a href="/pokemon">Pokemón</a></li>
           <li><a href="#">Gym</a></li>
+          <li><a href="#"></a></li>
         </ul>
       </div>
     </nav>
@@ -32,7 +33,7 @@
     <div class="pokemon-main mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <div class="pokemon-content mdl-layout__content">
 
-        <div class="app-content pokemon-wear-section">
+        <div class="app-content pokemon-wear-section"> <!-- This is the div that contains the backgroun image -->
 
           <h1>CONTENT GOES HERE - 'pokemon.ejs'</h1>
 
@@ -80,7 +81,6 @@
               <thead>
                 <tr>
                     <th>Pokemon</th>
-                    <th>Trainer</th>
                     <th>Combat Power</th>
                     <th>In The Gym?</th>
                     <th>Edit</th>
@@ -90,8 +90,7 @@
               <tbody>
                 <% for(let x = 0; x < pokemonInfo.length; x++) { %>
                 <tr>
-                  <td> <%= pokemonInfo[x].name %> </td>
-                  <td> <%= trainersInfo.name %> </td>
+                  <td> <a href="/profile/<%= pokemonInfo[x].id %>"><%= pokemonInfo[x].name %></a></td>
                   <td> <%= pokemonInfo[x].cp %> </td>
                   <td> <%= pokemonInfo[x].in_gym %> </td>
                   <td> <a href="/edit/<%= pokemonInfo[x].id %>">Edit</a></td>
@@ -106,8 +105,12 @@
         </div>
 
         <!-- // FOOTER -->
-        <footer class="pokemon-footer mdl-mega-footer">
-          Your slogan.
+        <footer class="page-footer deep-orange darken-4">
+          <div class="footer-copyright deep-orange darken-4">
+            <div class="container">
+            <span class="right">© 2017 Marie Walker</span>
+            </div>
+          </div>
         </footer>
 
       </div>
@@ -116,8 +119,3 @@
 
   </body>
 </html>
-
-
-
-
- <!-- last update: sat28oct2017@0830 -->

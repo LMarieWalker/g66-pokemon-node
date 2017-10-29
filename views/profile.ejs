@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Edit Pokemon</title>
+    <title>Pokemon Profile</title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -20,7 +20,7 @@
     <nav class="deep-orange darken-4">
       <div class="nav-wrapper">
         <a href="#" class="brand-logo"><img class="pokemon-logo-image" src="/images/pokemon-logo.png"></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <ul class="right hide-on-med-and-down">
           <li><a href="/trainers">Trainers</a></li>
           <li><a href="/pokemon">Pokemón</a></li>
           <li><a href="#">Gym</a></li>
@@ -35,28 +35,29 @@
 
         <div class="app-content pokemon-wear-section"> <!-- This is the div that contains the backgroun image -->
 
-          <h1>CONTENT GOES HERE - 'pokemon.ejs'</h1>
+          <h1>CONTENT GOES HERE - 'profile.ejs'</h1>
 
-          <!-- // EDIT THE SPECIFIC POKEMON -->
+          <!-- // TABLE WITH LISTED POKEMON AND THEIR PROPERTIES -->
           <div class="pokemonListTable">
-            <h1>Editing <%= pokemon.name %></h1>
-
-            <form action="/update/<%= pokemon.id %>" method="post">
-              <input type="text" name="name" value="<%= pokemon.name %>">
-              <select name='trainers'>
-                <option disabled selected>CHOOSE THE TRAINER</option>
-                <% for (let i = 0; i < trainerInfo.length; i++){ %>
-                <option value="<%= trainerInfo[i].id %>"><%= trainerInfo[i].name %></option>
-                <!-- <option><%= trainerInfo[i].id %></option> -->
-                <% } %>
-              </select>
-              <input type="number" name="cp" value="<%= pokemon.cp %>">
-              <input type="checkbox" name="in_gym" value="<%= pokemon.in_gym %>">
-              <input type="submit" value="Update">
-            </form>
+            <table>
+              <thead>
+                <tr>
+                    <th>Pokemon</th>
+                    <th>Trainer</th>
+                    <th>Combat Power</th>
+                    <th>In The Gym?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td> <%= thePokemon.name %> </td>
+                  <td> <%= theTrainer.name %> </td>
+                  <td> <%= thePokemon.cp %> </td>
+                  <td> <%= thePokemon.in_gym %> </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-
-
         </div>
 
         <!-- // FOOTER -->

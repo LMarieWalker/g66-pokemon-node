@@ -14,11 +14,11 @@ module.exports = function(app){
 
   app.get('/delete/:id', pokemon.delete);
 
-  app.get('/update/:id', pokemon.update);
+  app.post('/update/:id', pokemon.update);
+
+  app.get('/profile/:id', pokemon.getOne);
 
   app.use(function(req, res){
     res.send('not found');
   });
 }
-
-// last update: sat28oct2017@0830

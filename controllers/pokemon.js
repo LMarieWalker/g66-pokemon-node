@@ -2,7 +2,7 @@ const knex = require("../db/knex.js");
 
 module.exports = {
 
-// GET ALL COMPANY
+// GET ALL POKEMON
   getAll: function(req, res) {
     knex('trainers')
     .then((results) => {
@@ -15,6 +15,20 @@ module.exports = {
     })
   },
 
+// GET ONE POKEMON
+  getOne: function(req, res) {
+    knex('pokemon')
+      .where('id', req.params.id)
+      .then((onePokemon) => {
+        var aPokemon = onePokemon;
+
+        knex('trainers')
+          .then((oneTrainer) => {
+
+            res.render('profile', {thePokemon:onePokemon[0], theTrainer:oneTrainer[(aPokemon[0].trainer_id-1)]});
+          })
+      });
+  },
 
 // NEW POKEMON
   create: function(req, res){
@@ -25,7 +39,7 @@ module.exports = {
         cp: req.body.cp,
         in_gym: req.body.in_gym
       })
-      .then((reult) => {
+      .then((result) => {
         res.redirect('pokemon')
       });
     },
@@ -74,6 +88,3 @@ module.exports = {
   }
 
 }
-
-
-// last update: sat28oct2017@0830

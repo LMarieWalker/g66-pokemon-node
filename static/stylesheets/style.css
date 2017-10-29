@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-  /*last update: sat28oct2017@0830*/
+
 
 .pokemonListTable {
   border: 1px solid lightgrey;
@@ -87,6 +87,7 @@ a img{
 .pokemon-logo-image {
   height: 28px;
   width: 140px;
+  margin-left: 20px;
 }
 
 
@@ -329,6 +330,8 @@ a img{
   background-size: cover;
   height: 800px;
 }
+
+
 
 .pokemon-wear-band {
   position: absolute;
